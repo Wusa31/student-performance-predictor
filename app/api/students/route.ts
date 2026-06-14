@@ -7,7 +7,7 @@ function isValidScore(value: unknown) {
   return typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 100;
 }
 
-function isValidInput(body: Partial<StudentInput>) {
+function isValidInput(body: Partial<StudentInput>): body is StudentInput {
   return (
     typeof body.name === "string" &&
     body.name.trim().length >= 2 &&
